@@ -1,37 +1,72 @@
 // Your code here...
-#include<stdio.h>
-void rotateArr(int a[], int n, int d) {
+#include <stdio.h>
+int n; /* Size of the array */
+
+void printArray(int arr[]);
+void rotateByOne(int arr[]);
+
+
+int main()
+{
+    int i, k;
+    int arr[100];
+
+    scanf("%d",&n);
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
     
-    // Handle case when d > n
-    d %= n;
-  
-    // Storing rotated version of array
-    int temp[n];
+    scanf("%d", &k);
 
-    // Copy last d elements to the front of temp
-    for (int i = 0; i < d; i++)
-        temp[i] = a[n - d + i];
+    /* Actual rotation */
+    k = k % n;
 
-    // Copy the first n - d elements to the back of temp
-    for (int i = 0; i < n - d; i++)
-        temp[i + d] = a[i];
+    /* Print array before rotation */
+   
+    
 
-    // Copying the elements of temp in arr to get the 
-    // final rotated array
-    for (int i = 0; i < n; i++)
-        a[i] = temp[i];
+    /* Rotate array n times */
+    for(i=1; i<=N; i++)
+    {
+        rotateByOne(arr);
+    }
+
+    /* Print array after rotation */
+    printf("\n\nArray after rotation\n");
+    printArray(arr);
+
+    return 0;
 }
-void main()
-{int a[50],k,n;
-scanf("%d",&n);
-for(int i=0;i<=n;i++)
-scanf("%d",&a[i]);
-scanf("%d",k);
-rotateArr(a, n, k);
-
-    // Print the rotated array
-    for (int i = 0; i < n; i++)
-        printf("%d\n", a[i]);
 
 
+void rotateByOne(int arr[])
+{
+    int i, last;
+
+    /* Store last element of array */
+    last = arr[n - 1];
+
+    for(i=n-1; i>0; i--)
+    {
+        /* Move each array element to its right */
+        arr[i] = arr[i - 1];
+    }
+
+    /* Copy last element of array to first */
+    arr[0] = last;
+}
+
+
+/**
+ * Print the given array
+ */
+void printArray(int arr[])
+{
+    int i;
+
+    for(i=0; i<n; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
 }
