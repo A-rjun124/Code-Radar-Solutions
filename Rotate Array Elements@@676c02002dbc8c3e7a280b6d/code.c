@@ -25,7 +25,7 @@ int main()
     /* Print array before rotation */
    
     
-
+int temp=0;
     /* Rotate array n times */
     for (i = 0; i < k; i++) {
 int x = arr[0];
