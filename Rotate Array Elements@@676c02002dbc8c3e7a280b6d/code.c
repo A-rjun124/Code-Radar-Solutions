@@ -27,22 +27,15 @@ int main()
     
 
     /* Rotate array n times */
-    for(i=1; i<=n; i++)
-    {
-        
-
-    /* Store last element of array */
-    int last = arr[i - 1];
-
-    for(int j=i-1; j>0; j--)
-    {
-        /* Move each array element to its right */
-        arr[j] = arr[j - 1];
-    }
-
-    /* Copy last element of array to first */
-    arr[0] = last;
-    }
+    for (i = 0; i < k; i++) {
+int x = arr[0];
+for (j = 0; j < n; j++) {
+ temp=arr[j];
+ arr[j] = arr[j + 1];
+ arr[j+1]=temp;
+}
+arr[n - 1] = x;
+ }
 
     /* Print array after rotation */
     
