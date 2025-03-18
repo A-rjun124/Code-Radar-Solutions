@@ -29,7 +29,7 @@ int main() {
     int result[2]; // Array to store max and min
     findMaxMin(arr, n, result);
 
-    printf("%d %d", result[0],result[1]);
+    printf("%d %d", result[1],result[0]);
     // printf("%d", result[1]);
 
     return 0;
