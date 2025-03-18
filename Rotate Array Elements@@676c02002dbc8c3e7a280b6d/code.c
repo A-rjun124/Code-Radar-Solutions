@@ -33,7 +33,7 @@ int main()
     }
 
     /* Print array after rotation */
-    printf("\n\nArray after rotation\n");
+    
     printArray(arr);
 
     return 0;
