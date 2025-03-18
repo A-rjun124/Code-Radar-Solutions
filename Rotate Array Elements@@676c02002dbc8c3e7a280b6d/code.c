@@ -8,7 +8,7 @@ void rotateByOne(int arr[]);
 
 int main()
 {
-    int i, k;
+    int i, k,j;
     int arr[100];
 
     scanf("%d",&n);
