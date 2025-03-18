@@ -32,7 +32,7 @@ int main()
         
 
     /* Store last element of array */
-    last = arr[i - 1];
+    int last = arr[i - 1];
 
     for(int j=i-1; j>0; j--)
     {
