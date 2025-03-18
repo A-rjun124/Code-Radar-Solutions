@@ -1,77 +1,47 @@
 // Your code here...
 #include <stdio.h>
-int n; /* Size of the array */
 
-void printArray(int arr[]);
-void rotateByOne(int arr[]);
+void rotateRight(int arr[], int n, int k) {
+    k = k % n; // Handle cases where k is greater than n
+    int temp[k];
 
+    // Copy last k elements to a temporary array
+    for (int i = 0; i < k; i++) {
+        temp[i] = arr[n - k + i];
+    }
 
-int main()
-{
-    int i, k,j;
-    int arr[100];
+    // Shift the rest of the array to the right
+    for (int i = n - 1; i >= k; i--) {
+        arr[i] = arr[i - k];
+    }
 
-    scanf("%d",&n);
-    for(i=0; i<n; i++)
-    {
+    // Copy elements from the temporary array to the front
+    for (int i = 0; i < k; i++) {
+        arr[i] = temp[i];
+    }
+}
+
+int main() {
+    int n, k;
+    //printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    //printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
-    
+
+    //printf("Enter the number of positions to rotate: ");
     scanf("%d", &k);
 
-    /* Actual rotation */
-    k = k % n;
+    rotateRight(arr, n, k);
 
-    /* Print array before rotation */
-   
-    
-int temp=0;
-    /* Rotate array n times */
-    for (i = 0; i < k; i++) {
-int x = arr[0];
-for (j = 0; j < n; j++) {
- temp=arr[j];
- arr[j] = arr[j + 1];
- arr[j+1]=temp;
-}
-arr[n - 1] = x;
- }
-
-    /* Print array after rotation */
-    
-    printArray(arr);
+    //printf("Array after rotation:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
     return 0;
-}
-
-
-// void rotateByOne(int arr[])
-// {
-//     int i, last;
-
-//     /* Store last element of array */
-//     last = arr[n - 1];
-
-//     for(i=n-1; i>0; i--)
-//     {
-//         /* Move each array element to its right */
-//         arr[i] = arr[i - 1];
-//     }
-
-//     /* Copy last element of array to first */
-//     arr[0] = last;
-// }
-
-
-/**
- * Print the given array
- */
-void printArray(int arr[])
-{
-    int i;
-
-    for(i=0; i<n; i++)
-    {
-        printf("%d\n", arr[i]);
-    }
 }
