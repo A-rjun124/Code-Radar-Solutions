@@ -29,7 +29,19 @@ int main()
     /* Rotate array n times */
     for(i=1; i<=n; i++)
     {
-        rotateByOne(arr);
+        
+
+    /* Store last element of array */
+    last = arr[i - 1];
+
+    for(int j=i-1; j>0; j--)
+    {
+        /* Move each array element to its right */
+        arr[j] = arr[j - 1];
+    }
+
+    /* Copy last element of array to first */
+    arr[0] = last;
     }
 
     /* Print array after rotation */
@@ -40,22 +52,22 @@ int main()
 }
 
 
-void rotateByOne(int arr[])
-{
-    int i, last;
+// void rotateByOne(int arr[])
+// {
+//     int i, last;
 
-    /* Store last element of array */
-    last = arr[n - 1];
+//     /* Store last element of array */
+//     last = arr[n - 1];
 
-    for(i=n-1; i>0; i--)
-    {
-        /* Move each array element to its right */
-        arr[i] = arr[i - 1];
-    }
+//     for(i=n-1; i>0; i--)
+//     {
+//         /* Move each array element to its right */
+//         arr[i] = arr[i - 1];
+//     }
 
-    /* Copy last element of array to first */
-    arr[0] = last;
-}
+//     /* Copy last element of array to first */
+//     arr[0] = last;
+// }
 
 
 /**
