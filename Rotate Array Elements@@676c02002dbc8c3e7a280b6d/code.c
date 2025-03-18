@@ -39,7 +39,7 @@ int main() {
 
     //printf("Array after rotation:\n");
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d\n", arr[i]);
     }
     printf("\n");
 
