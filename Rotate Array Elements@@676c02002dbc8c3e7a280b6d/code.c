@@ -27,7 +27,7 @@ int main()
     
 
     /* Rotate array n times */
-    for(i=1; i<=N; i++)
+    for(i=1; i<=n; i++)
     {
         rotateByOne(arr);
     }
